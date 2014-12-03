@@ -31,13 +31,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'cocoon'
 
-gem "sorcery"
 
-# Use unicorn as the app server
-# gem 'unicorn'
+gem 'sorcery'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'rails-erd'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem "pry-rails"
