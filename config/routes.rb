@@ -1,19 +1,6 @@
 Rails.application.routes.draw do
   
-
-  get 'categories/new'
-
-  get 'categories/create'
-
-  get 'categories/update'
-
-  get 'categories/edit'
-
-  get 'categories/destroy'
-
-  get 'categories/index'
-
-  get 'categories/show'
+root "projects#index"
 
   resources :pledges
   resources :users

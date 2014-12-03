@@ -31,6 +31,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'cocoon'
 
+gem "sorcery"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
