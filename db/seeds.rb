@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+# 10.times do
+	
+# end
+
+
+
+# 5.times do
+# 	Pledge.create!(
+# 		user_id: User.all.sample.id,
+# 		project_id: Project.all.sample.id,
+# 		ammount: 5
+# )
+# end
