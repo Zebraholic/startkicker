@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+
 root "projects#index"
 
   resources :pledges
@@ -7,6 +8,9 @@ root "projects#index"
   resources :rewards
   resources :projects
   resources :categories
+  resources :user_sessions, only: [:new, :create, :destroy]
+
+  get 'login' => ''
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
