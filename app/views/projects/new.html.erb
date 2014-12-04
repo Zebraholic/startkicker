@@ -20,35 +20,28 @@
   </p>
    <p>
     <%= f.label "Description" %><br>
-    <%= f.text_field "description" %>
+    <%= f.text_area "description" %>
   </p>
    <p>
     <%= f.label "Photo" %><br>
     <%= f.url_field "photo" %>
   </p>
 
-  <%= render partial: "rewards/rewards_fields" %>
+  <p>Rewards</p>
+  <%= f.fields_for :rewards do |reward_fields| %>
+     <div>
+    <%= reward_fields.label :amount %>
+    <%= reward_fields.number_field :amount %>
+    </div>
+       <div>
+    <%= reward_fields.label :description %>
+    <%= reward_fields.number_field :description %>
+    </div>
+    <% end %>
   <p>
     <%= f.submit "Save" %>
   </p>
 
 <% end %>
 
-
-
- <!-- = form_for @project do |f|
-  .field
-    = f.label :name
-    %br
-    = f.text_field :name
-  .field
-    = f.label :description
-    %br
-    = f.text_field :description
-  %h3 Tasks
-  #tasks
-    = f.fields_for :tasks do |task|
-      = render 'task_fields', :f => task
-    .links
-      = link_to_add_association 'add task', f, :tasks
-  = f.submit -->
+ 

@@ -1,13 +1,14 @@
-<!--  .nested-fields
-  .field
-    = f.label :amount
-    %br
-    = f.text_field :amount
-  .field
-    = f.label :description
-    %br
-    = f.text_field :description
-  .field
-    = f.check_box :done
-    = f.label :done
-  = link_to_remove_association "remove task", f -->
+  <p>Rewards</p>
+  <div>
+    <%= f.label "amount" %>
+    <%= f.number_field :amount %>
+  <div>
+
+  <%= f.fields_for :rewards do |r| %>
+    <%= render 'reward_fields', :f => r %>
+  <% end %>
+  </div>
+
+  <div>
+    <%= link_to_add_association 'add reward', f, :rewards %>
+  </div>
