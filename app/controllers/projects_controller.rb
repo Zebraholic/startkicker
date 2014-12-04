@@ -30,10 +30,13 @@ def index
   
 
   def show
+    @project = Project.find(params[:id])
+    @reward = Reward.find(params[:project_id])
+
   end
 
   private
   def project_params
-    params.require(:project).permit(:title, :description, :start_date, :end_date, rewards_attributes: [:amount, :description, :_destroy])
+    params.require(:project).permit(:name, :funding_goal, :description, :start_date, :end_date, rewards_attributes: [:amount, :description, :_destroy])
   end
 end

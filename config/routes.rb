@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+ Rails.application.routes.draw do
 
 
   root "projects#index"
@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :pledges
   resources :users
   resources :rewards
-  resources :projects, only: [:index, :new, :create]
+  resources :projects, only: [:index, :new, :create, :show]
   resources :categories
   resources :user_sessions, only: [:new, :create, :destroy]
 
