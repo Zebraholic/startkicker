@@ -37,3 +37,4 @@ gem 'sorcery'
 gem 'rails-erd'
 
 gem "pry-rails"
+gem "haml"

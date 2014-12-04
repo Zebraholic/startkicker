@@ -1,4 +1,4 @@
-<h1>Projects#new</h1>
+<!-- <h1>Projects#new</h1>
 <p>Find me in app/views/projects/new.html.erb</p>
 
 <%= form_for @project do |f| %>
@@ -26,7 +26,30 @@
     <%= f.label "Photo" %><br>
     <%= f.url_field "photo" %>
   </p>
+
+  <%= render partial: "rewards/rewards_fields" %>
   <p>
     <%= f.submit "Save" %>
   </p>
+
 <% end %>
+
+
+ -->
+
+ = form_for @project do |f|
+  .field
+    = f.label :name
+    %br
+    = f.text_field :name
+  .field
+    = f.label :description
+    %br
+    = f.text_field :description
+  %h3 Tasks
+  #tasks
+    = f.fields_for :tasks do |task|
+      = render 'task_fields', :f => task
+    .links
+      = link_to_add_association 'add task', f, :tasks
+  = f.submit

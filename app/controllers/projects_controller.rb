@@ -21,4 +21,9 @@ class ProjectsController < ApplicationController
 
   def show
   end
+
+  private
+  def project_params
+    params.require(:project).permit(:title, :description, rewards_attributes: [:id, :amount, :description, :_destroy])
+  end
 end

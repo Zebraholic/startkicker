@@ -1,0 +1,13 @@
+ .nested-fields
+  .field
+    = f.label :amount
+    %br
+    = f.text_field :amount
+  .field
+    = f.label :description
+    %br
+    = f.text_field :description
+  .field
+    = f.check_box :done
+    = f.label :done
+  = link_to_remove_association "remove task", f
