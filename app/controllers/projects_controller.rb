@@ -6,7 +6,6 @@ def index
 
   def new
     @project = Project.new
-    @project.rewards.new
   end
 
   def create
@@ -35,6 +34,6 @@ def index
 
   private
   def project_params
-    params.require(:project).permit(:title, :description, :start_date, :end_date, rewards_attributes: [:amount, :description])
+    params.require(:project).permit(:title, :description, :start_date, :end_date, rewards_attributes: [:amount, :description, :_destroy])
   end
 end

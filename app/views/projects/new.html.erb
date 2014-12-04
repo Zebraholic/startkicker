@@ -1,5 +1,4 @@
 <h1>Add a New Project</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
 
 <%= form_for @project do |f| %>
   <p>
@@ -27,18 +26,12 @@
     <%= f.url_field "photo" %>
   </p>
 
-  <p>Rewards</p>
+  <p>Add Your Reward Levels (Limit of 3)</p>
   <%= f.fields_for :rewards do |reward_fields| %>
-     <div>
-    <%= reward_fields.label :amount %>
-    <%= reward_fields.number_field :amount %>
-    </div>
-       <div>
-    <%= reward_fields.label :description %>
-    <%= reward_fields.number_field :description %>
-    </div>
+     <%= render 'reward_fields', f: reward_fields %>
     <% end %>
   <p>
+    <%= link_to_add_association 'add reward', f, :rewards %>
     <%= f.submit "Save" %>
   </p>
 
