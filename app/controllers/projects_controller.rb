@@ -31,8 +31,6 @@ def index
 
   def show
     @project = Project.find(params[:id])
-    @reward = Reward.find(params[:project_id])
-
   end
 
   private
