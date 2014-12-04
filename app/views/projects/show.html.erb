@@ -1,8 +1,8 @@
-<h1>Current Project</h1>
+<h1>Current Projects</h1>
+  
   <p><%= @project.name %></p>
-  <p><%= @project.funding_goal%></p>
-  <p><%= @project.description%></p>
-  <p><% @project.rewards.each do |reward| %></p>
-	<p><%= reward.amount %></p>
-	<p><%= reward.description %></p>
-	<% end %>
+  
+  <% @project.rewards.each do |reward| %>
+  	<div><p><%= reward.amount %></p>
+  	<p><%= reward.description %></p></div>
+  	<% end %>

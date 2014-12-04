@@ -26,7 +26,7 @@
     <%= f.url_field "photo" %>
   </p>
 
-  <p>Add Your Reward Levels (Limit of 3)</p>
+  <p>Add Your Reward Levels</p>
   <%= f.fields_for :rewards do |reward_fields| %>
      <%= render 'reward_fields', f: reward_fields %>
     <% end %>
