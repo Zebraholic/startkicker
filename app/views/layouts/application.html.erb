@@ -1,27 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Startkicker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <title><%= content_for?(:title) ? yield(:title) : "StarterKicker" %></title>
 
-    <p class="userinfo">
-      <% if current_user %>
-        Signed in as <%= current_user.first_name %>. <%= link_to "Log out", user_session_path("current"), :method => :delete %>
-      <% else %>
-        <%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_path %>
-      <% end %>
-    </p>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
 
+  <body>
 
-<%= yield %>
-
-
-
-</body>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
