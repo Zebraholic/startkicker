@@ -18,11 +18,18 @@ def index
     end
   end
 
-
-  def update
+  def edit
+    @project = Project.find(params[:id])
   end
 
-  def edit
+  def update
+    @project = Project.find(params[:id])
+
+    if @project.update_attributes(project_params)
+      redirect_to project_path(@project)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -36,6 +43,6 @@ def index
 
   private
   def project_params
-    params.require(:project).permit(:name, :funding_goal, :description, :picture, :start_date, :end_date, rewards_attributes: [:amount, :description, :_destroy])
+    params.require(:project).permit(:name, :funding_goal, :description, :picture, :start_date, :end_date, rewards_attributes: [:id, :amount, :description, :_destroy])
   end
 end

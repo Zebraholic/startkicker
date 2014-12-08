@@ -32,6 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'cocoon'
 
 gem 'foundation-rails'
+group :development do
+  gem 'rails_layout'
+end
 
 gem 'sorcery'
 
@@ -41,4 +44,5 @@ gem "pry-rails"
 gem "haml"
 
 gem 'carrierwave'
-gem 'mini_magick'
+gem 'rmagick'
+# gem 'mini_magick'

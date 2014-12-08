@@ -1,0 +1,41 @@
+<%= form_for @project do |f| %>
+  <p>
+    <%= f.label "Project Name" %><br>
+    <%= f.text_field "name" %>
+  </p>
+  <p>
+    <%= f.label "Funding Goal" %><br>
+    <%= f.number_field "funding_goal" %>
+  </p>
+  <p>
+    <%= f.label "Start Date" %><br>
+    <%= f.date_field "start_date" %>
+  </p>
+   <p>
+    <%= f.label "End Date" %><br>
+    <%= f.date_field "end_date" %>
+  </p>
+   <p>
+    <%= f.label "Description" %><br>
+    <%= f.text_area "description" %>
+  </p>
+   <p>
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </p>
+
+  <p>Add Your Reward Levels</p>
+  <div id="rewards">
+    <%= f.fields_for :rewards do |reward_fields| %>
+      <%= render 'reward_fields', f: reward_fields %>
+    <% end %>
+    <p class="links">
+      <%= link_to_add_association 'add reward', f, :rewards %>
+    </p>
+  </div>
+
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+
+<% end %>

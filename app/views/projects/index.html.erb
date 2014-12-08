@@ -1,13 +1,14 @@
 <div>
-<header>Projects</header>
+<h2>Current Projects</h2>
+<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
+	<% @projects.each do |project| %>
+	  <li class="small-6 large-6 columns">
+		  <div class="project-title"><%= link_to(project.name, project_path(project)) %></div>
+		  <%= image_tag project.picture_url(:medium) %>
+		  Funding Goal<div class="project-goal"><%= project.funding_goal %></div>
+		</li>
+	<% end %>
+</ul>
+<%= link_to "New Project", new_project_path %>
 
-<% @projects.each do |project| %>
-  <p><%= link_to(project.name, project_path(project)) %> </p>
-  <p><%= project.funding_goal %></p>
-
-<% end %>
-
-
-  <%= link_to "New Project", new_project_path %>
-</div>
 

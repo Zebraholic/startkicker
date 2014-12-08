@@ -1,17 +1,23 @@
 <body>
-	<h1><%= @project.name %></h1> 
+	<h2><%= @project.name %></h2> 
 	
-<p> <%= image_tag @project.picture_url (:medium) %> </p>
-<div><%= @project.funding_goal %></div> 
+<div> <%= image_tag @project.picture_url (:large) %> </div>
+<div>Funding Goal: $<%= @project.funding_goal %></div> 
 <div><%= @project.description %></div> 
-
-
-
-
 
 
   <% @project.rewards.each do |reward| %>
   	<div><p><%= reward.amount %></p>
   	<p><%= reward.description %></p></div>
   <% end %>
+
+
+  <%= link_to "Edit Project", edit_project_path(@project) %>
+
+
+
 </body>
+
+
+
+

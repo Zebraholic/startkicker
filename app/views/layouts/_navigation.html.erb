@@ -1,0 +1,15 @@
+<%# navigation styled for Zurb Foundation 5 %>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+  	<header>
+    <span class="name"><%= link_to 'Kicker', root_path %></span><span class="second"><%= link_to 'Starter', root_path %></span>
+
+    </header>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+  <div class="top-bar-section">
+    <ul>
+      <%= render 'layouts/navigation_links' %>
+    </ul>
+  </div>
+</nav>

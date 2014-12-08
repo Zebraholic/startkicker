@@ -6,7 +6,7 @@
   resources :pledges
   resources :users
   resources :rewards
-  resources :projects, only: [:index, :new, :create, :show]
+  resources :projects
   resources :categories
   resources :user_sessions, only: [:new, :create, :destroy]
 
