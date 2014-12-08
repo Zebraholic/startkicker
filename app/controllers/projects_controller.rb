@@ -10,10 +10,11 @@ def index
 
   def create
     @project = Project.new(project_params)
+
     if @project.save
       redirect_to projects_url
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -35,6 +36,6 @@ def index
 
   private
   def project_params
-    params.require(:project).permit(:name, :funding_goal, :description, :start_date, :end_date, rewards_attributes: [:amount, :description, :_destroy])
+    params.require(:project).permit(:name, :funding_goal, :description, :picture, :start_date, :end_date, rewards_attributes: [:amount, :description, :_destroy])
   end
 end

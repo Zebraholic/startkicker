@@ -1,8 +1,10 @@
-<h1><%= @project.name %></h1> 
+<body>
+	<h1><%= @project.name %></h1> 
 	
-<p> <%= image_tag @project.photo %> </p>
+<p> <%= image_tag @project.picture_url (:medium) %> </p>
 <div><%= @project.funding_goal %></div> 
 <div><%= @project.description %></div> 
+
 
 
 
@@ -12,3 +14,4 @@
   	<div><p><%= reward.amount %></p>
   	<p><%= reward.description %></p></div>
   <% end %>
+</body>

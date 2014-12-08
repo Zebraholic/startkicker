@@ -39,3 +39,6 @@ gem 'rails-erd'
 
 gem "pry-rails"
 gem "haml"
+
+gem 'carrierwave'
+gem 'mini_magick'
